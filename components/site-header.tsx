@@ -4,13 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useId, useState } from "react";
+import { withBasePath, withoutBasePath } from "@/lib/base-path";
 import { isActiveNavPath, siteBrand, siteNavItems } from "@/lib/site-content";
 
 const focusRing =
   "outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-plum";
 
 export function SiteHeader() {
-  const pathname = usePathname() ?? "";
+  const pathname = withoutBasePath(usePathname() ?? "");
   const [open, setOpen] = useState(false);
   const navId = useId();
 
@@ -23,7 +24,7 @@ export function SiteHeader() {
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/media/logo.png"
+            src={withBasePath("/media/logo.png")}
             alt="Madni Strategies"
             width={280}
             height={90}

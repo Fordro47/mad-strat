@@ -18,6 +18,21 @@ npm run build
 npm start
 ```
 
+`npm run build` writes a static export to `out/`, which is what GitHub Pages deploys.
+
+## GitHub Pages
+
+This repo includes a GitHub Actions workflow at [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). On every push to `main`, it installs dependencies, builds the static Next.js export, uploads `out/`, and deploys it to GitHub Pages.
+
+To publish the site:
+
+1. Push the repo to GitHub.
+2. In the repository settings, open **Pages**.
+3. Set **Build and deployment** to **GitHub Actions**.
+4. Push to `main` or run the **Deploy to GitHub Pages** workflow manually.
+
+For project pages such as `https://<user>.github.io/mad-strat/`, the workflow automatically sets `NEXT_PUBLIC_BASE_PATH=/mad-strat` during the build. User or organization pages such as `https://<user>.github.io/` build without a base path.
+
 ## Site structure
 
 - [`app/layout.tsx`](app/layout.tsx): metadata, typography, accessibility skip link.

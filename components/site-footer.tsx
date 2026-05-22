@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/base-path";
 import { footer, siteBrand } from "@/lib/site-content";
 
 const focusRing =
@@ -17,7 +18,7 @@ export function SiteFooter() {
             className={`inline-flex shrink-0 items-center gap-3 rounded-md ${focusRing}`}
           >
             <Image
-              src="/media/logo.png"
+              src={withBasePath("/media/logo.png")}
               alt="Madni Strategies"
               width={170}
               height={56}
