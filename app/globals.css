@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+:root {
+  /* Bordeaux MS 1 — Madni Strategies */
+  --color-vanilla-cream: #f6f1e8;
+  --color-charcoal-ink: #222126;
+  --color-midnight-plum: #44213d;
+  --color-bordeaux-wine: #5c1a33;
+  --color-pastel-blue: #afc7d9;
+}
+
+@theme inline {
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
+
+  --color-brand-canvas: var(--color-vanilla-cream);
+  --color-brand-ink: var(--color-charcoal-ink);
+  --color-brand-plum: var(--color-midnight-plum);
+  --color-brand-bordeaux: var(--color-bordeaux-wine);
+  --color-brand-accent: var(--color-pastel-blue);
+}
+
+body {
+  background-color: var(--color-brand-canvas);
+  color: var(--color-brand-ink);
+  font-family: var(--font-sans);
+}
