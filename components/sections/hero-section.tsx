@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/base-path";
 import { hero, siteBrand } from "@/lib/site-content";
 
 const focusRing =
@@ -65,7 +66,7 @@ export function HeroSection() {
               />
               <div className="relative overflow-hidden border border-brand-ink/12 bg-brand-canvas shadow-[18px_18px_0_0_rgb(175_199_217_/_0.35)]">
                 <Image
-                  src="/media/Brittany_Madni_Headshot.JPG"
+                  src={withBasePath("/media/Brittany_Madni_Headshot.JPG")}
                   alt="Brittany Madni"
                   width={680}
                   height={850}
